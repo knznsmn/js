@@ -1,0 +1,15 @@
+:root {
+	--hue-purple: hsl(25, 85%, 75%);
+	--hue-rouge: hsl(10, 95%, 90%);
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-color: beige;
+}
+
