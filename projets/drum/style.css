@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+
 :root {
 --bg-color: linear-gradient(45deg, lightgreen, skyblue);
 }
@@ -6,21 +8,33 @@
   padding: 0;
   box-sizing: content-box;
 }
-body {
-  width: 100%;
-  height: 100vh;
-  background: var(--bg-color) no-repeat;
-}
 
 /* Centered Elements */
-header, #app {
+body, ul, #app {
   display: flex;
   justify-content: center;
+  font-family: 'Titan One', sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  background: var(--bg-color) no-repeat;
+}
+/* Header */
+ul li {
+  text-transform: uppercase;
+  font-size: small;
+  margin: 1rem;
+  list-style: none;
 }
 
 #app {
   width: 100%;
-  height: 50vh;
   align-items: center;
 }
 #app article {
@@ -30,11 +44,18 @@ header, #app {
   align-items: center;
   gap: .25rem;
 }
-
+#app img {
+  width: 5rem;
+  margin: .25rem;
+}
 #app button {
   width: 5rem;
   height: 5rem;
 }
+#app section {
+  display: flex;
+  flex-direction: column;
+}
 .pressed {
-  
+
 }

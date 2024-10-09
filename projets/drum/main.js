@@ -1,4 +1,7 @@
 // Element Bindings
+const element = {
+  footer: document.getElementsByTagName('footer')[0],
+}
 const keys = {
   q: document.getElementById('q'),
   w: document.getElementById('w'),
@@ -23,14 +26,23 @@ const sounds = {
   l: new Audio('./public/wav/tome.wav'),
 }
 
+// UI Components
+function Footer() {
+  const credit = document.createElement('p');
+  credit.innerHTML = `<small>${new Date().getFullYear()}. knznsmn. All rights reversed.</small>`;
+  element.footer.appendChild(credit);
+}
+
 // Function Hall
 function playSound(e) {
   const sound = sounds[e];
-  sound.currentTime = 0;
-  sounds[e].play();
-}
-function playAnimation(e) {
-
+  if (sound) {
+    sound.currentTime = 0;
+    sound.play();
+  }
+  else {
+    console.log(`Unregistered ID: ${e}`);
+  }
 }
 // MAIN()
 
@@ -42,3 +54,5 @@ document.addEventListener('keydown', (e) => {
 document.addEventListener('click', (e) => {
   playSound(e.target.id);
 })
+
+Footer();
