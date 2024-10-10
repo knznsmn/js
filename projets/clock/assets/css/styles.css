@@ -8,10 +8,15 @@
   box-sizing: content-box;
 }
 /* Centered Elements */
-body, .face {
+body, ul, .face {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+ul li {
+	list-style: none;
+	margin: .5rem 2rem;
 }
 
 body {
@@ -21,14 +26,37 @@ body {
   font-size: 14px;
   flex-direction: column;
 }
-.clock {
-  width: 10rem;
+.clock, .face {
+	width: 10rem;
   height: 10rem;
+	border-radius: 50%;
+}
+.clock {
+	position: relative;
   border: .5rem solid black;
-  border-radius: 50%;
+}
+.face {
+	background-color: white;
+	display: flex;
+	justify-content: center;
 }
 .hand {
-  width: 1rem;
+	top: 0;
   height: 5rem;
   background-color: black;
+}
+.hour {
+	width: .5rem;
+	position: absolute;
+	background-color: blue;
+}
+.minute {
+	width: .5rem;
+	position: absolute;
+	background-color: yellow;
+}
+.second {
+	width: .25rem;
+	position: absolute;
+	background-color: red;
 }
