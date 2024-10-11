@@ -42,23 +42,43 @@ body {
 }
 .hand {
 	top: 0;
-  height: 5rem;
   background-color: black;
 }
 .hour {
 	width: .5rem;
+	height: 3rem;
+	top: 2rem;
 	position: absolute;
-	background-color: blue;
+	background-color: black;
+	transform-origin: bottom;
+  transform: rotate(90deg);
 }
 .minute {
 	width: .5rem;
+	height: 4rem;
+	top: 1rem;
 	position: absolute;
-	background-color: yellow;
+	background-color: grey;
+	transform-origin: bottom;
+  transform: rotate(90deg);
 }
 .second {
 	width: .25rem;
+	height: 4.75rem;
+	top: .25rem;
 	position: absolute;
 	background-color: red;
-    transform-origin: bottom;
-    transform: rotate(90deg);
+  transform-origin: bottom;
+  transform: rotate(90deg);
+}
+.hour, .minute, .second {
+	border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
+}
+.nose {
+	z-index: 2;
+	width: 1rem;
+	height: 1rem;
+	background-color: black;
+	border-radius: 50%;
 }
