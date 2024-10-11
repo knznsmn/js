@@ -59,4 +59,6 @@ body {
 	width: .25rem;
 	position: absolute;
 	background-color: red;
+    transform-origin: bottom;
+    transform: rotate(90deg);
 }

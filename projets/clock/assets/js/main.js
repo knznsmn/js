@@ -7,5 +7,22 @@ function Footer() {
 	footer.appendChild(credit);
 }
 
+// Processes
+function timeKeeper() {
+    const hands = {
+        hour: document.querySelector('.hour'),
+        mins: document.querySelector('.minute'),
+        secs: document.querySelector('.seconds'),
+    }
+    const now = new Date();
+    const time = {
+        hour: now.getHours(),
+        mins: now.getMinutes(),
+        secs: now.getSeconds(),
+    }
+    
+    hands[secs].style.rotation = 
+}
+
 // MAIN()
 Footer();
