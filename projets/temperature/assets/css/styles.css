@@ -1,0 +1,39 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: content-box;
+}
+
+/* Centered Elements */
+body, footer, ul, section {
+	display: flex;
+	align-items: center;
+}
+body {
+	width: 100vw;
+	height: 100vh;
+	flex-direction: column;
+	justify-content: space-between;
+	font-family: sans-serif;
+}
+article {
+	padding: 1rem;
+	background: linear-gradient(45deg, lightblue, lightgreen);
+	border-radius: 5%;
+}
+section {
+	flex-direction: column;
+	margin: 1rem;
+}
+h1 {
+	font-size: 1rem;
+	margin-bottom: 1rem;
+	text-transform: uppercase;
+}
+li {
+	list-style: none;
+	margin: auto .5rem;
+}
+footer {
+	margin: 1rem;
+}
