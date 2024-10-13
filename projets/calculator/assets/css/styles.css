@@ -1,0 +1,88 @@
+:root {
+  /* Colors */
+  --hue-dark: hsl(45, 10%, 20%);
+  --hue-darker: hsl(45, 10%, 10%);
+  --hue-darkest: hsl(45, 10%, 5%);
+  --hue-light: hsl(45, 0%, 80%);
+  --hue-lighter: hsl(45, 0%, 90%);
+  --hue-lightest: hsl(45, 0%, 95%);
+  --bg-light: hsl(0, 50%, 100%);
+  --bg-dark: hsl(0, 0%, 0%);
+  --calc-dark: linear-gradient(45deg, hsl(90, 10%, 10%), hsl(90, 15%, 15%));
+  --calc-light: linear-gradient(45deg, hsl(90, 10%, 90%), hsl(90, 15%, 95%));
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(120deg, lightblue, lightgreen);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+ul {
+  display: flex;
+  margin: .5rem auto;
+}
+ul li {
+  list-style: none;
+  margin: auto 1rem;
+}
+.calculatrice {
+  /* max-width: 20rem; */
+  width: 100%;
+  padding: 1rem;
+  background: var(--calc-dark);
+  border-radius: 2rem;
+  
+}
+.display {
+  /* position: relative; */
+  margin: 2rem auto;
+  padding: .5rem;
+  display: flex;
+  flex-direction: column;
+  height: 6rem;
+  background: var(--calc-light);
+  border-radius: .5rem;
+  text-align: right;
+}
+.preview {
+  height: 2rem;
+  /* position: absolute; */
+  font-size: 1rem;
+}
+.result {
+  height: 3.5rem;
+  /* position: absolute; */
+  font-size: 3rem;
+}
+.keys {
+  margin: .5rem;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  gap: .25rem;
+}
+button {
+  width: 100%;
+  height: 100%;
+  min-width: 5rem;
+  min-height: 5rem;
+  font-size: 2.5rem;
+  border-radius: .5rem;
+  background: var(--calc-light);
+}
+.operator {
+  color: hsl(0, 80%, 50%);
+}
+.function {
+  color: hsl(130, 50%, 50%);
+}
