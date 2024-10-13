@@ -29,75 +29,74 @@ console.log("main()");
 // Event Listeners
 app.keypad.addEventListener('click', (e) => {
   console.log("keypad()");
-  let resultTxt = app.result.textContent;
   let x, y, op;
   x = y = 0;
   
-  if (resultTxt === '0') {
-      resultTxt = '';
+  if (app.result.textContent === '0') {
+      app.result.textContent = '';
   }
   
   switch (e.target.className) {
     case 'number no0':
-      resultTxt += '0';
+      app.result.textContent += '0';
       break;
     case 'number no1':
-      resultTxt += '1';
+      app.result.textContent += '1';
       break;
     case 'number no2':
-      resultTxt += '2';
+      app.result.textContent += '2';
       break;
     case 'number no3':
-      resultTxt += '3';
+      app.result.textContent += '3';
       break;
     case 'number no4':
-      resultTxt += '4';
+      app.result.textContent += '4';
       break;
     case 'number no5':
-      resultTxt += '5';
+      app.result.textContent += '5';
       break;
     case 'number no6':
-      resultTxt += '6';
+      app.result.textContent += '6';
       break;
     case 'number no7':
-      resultTxt += '7';
+      app.result.textContent += '7';
       break;
     case 'number no8':
-      resultTxt += '8';
+      app.result.textContent += '8';
       break;
     case 'number no9':
-      resultTxt += '9';
+      app.result.textContent += '9';
       break;
     case 'operator add':
-      x = resultTxt;
+      x = app.result.textContent;
       op = '+';
-      resultTxt = '0';
+      app.result.textContent = '0';
       break;
     case 'operator sub':
-      x = resultTxt;
+      x = app.result.textContent;
       op = '-';
-      resultTxt = '0';
+      app.result.textContent = '0';
       break;
     case 'operator mul':
-      x = resultTxt;
+      x = app.result.textContent;
       op = '*';
-      resultTxt = '0';
+      app.result.textContent = '0';
       break;
     case 'operator div':
-      x = resultTxt;
+      x = app.result.textContent;
       op = '/';
-      resultTxt = '0';
+      app.result.textContent = '0';
       break;
     case 'operator eql':
-      y = resultTxt;
-      resultTxt = calculate(op, Number(x), Number(y));
+      y = app.result.textContent;
+      app.result.textContent = calculate(op, Number(x), Number(y));
       break;
     case 'function res':
       app.inline.textContent = '';
-      resultTxt = '0';
+      app.result.textContent = '0';
       break;
     case 'function del':
-      resultTxt = resultTxt.slice(0, -1);
+      app.result.textContent = app.result.textContent.slice(0, -1);
       break;
     default:
       console.log("switch()");
