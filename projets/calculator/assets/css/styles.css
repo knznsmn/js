@@ -53,7 +53,7 @@ ul li {
   border-radius: .5rem;
   text-align: right;
 }
-.preview {
+.inline {
   height: 2rem;
   /* position: absolute; */
   font-size: 1rem;
@@ -63,7 +63,7 @@ ul li {
   /* position: absolute; */
   font-size: 3rem;
 }
-.keys {
+.keypad {
   margin: .5rem;
   display: grid;
   grid-template-rows: repeat(5, 1fr);
