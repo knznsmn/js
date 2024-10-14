@@ -8,6 +8,9 @@ const app = {
 
 // Components
 function calculate(op, numx, numy) {
+  Number(numx);
+  Number(numy);
+  console.log(numx, numy)
   switch (op) {
     case '+':
       return numx + numy;
@@ -20,17 +23,18 @@ function calculate(op, numx, numy) {
   };
   console.log("calculate()");
 }
+
+// MAIN()
 app.inline.textContent = '';
 app.result.textContent = '0';
 
-// MAIN()
-console.log("main()");
-
+let x, y;
+let op;
+let state;
+x = y = 0;
 // Event Listeners
 app.keypad.addEventListener('click', (e) => {
-  console.log("keypad()");
-  let x, y, op;
-  x = y = 0;
+  state = false;
   
   if (app.result.textContent === '0') {
       app.result.textContent = '';
@@ -69,34 +73,47 @@ app.keypad.addEventListener('click', (e) => {
       break;
     case 'operator add':
       x = app.result.textContent;
+      app.inline.textContent += app.result.textContent + " + ";
       op = '+';
-      app.result.textContent = '0';
+      app.result.textContent = '';
       break;
     case 'operator sub':
       x = app.result.textContent;
+      app.inline.textContent += app.result.textContent + " - ";
       op = '-';
-      app.result.textContent = '0';
+      app.result.textContent = '';
       break;
     case 'operator mul':
       x = app.result.textContent;
+      app.inline.textContent += app.result.textContent + " x ";
       op = '*';
-      app.result.textContent = '0';
+      app.result.textContent = '';
       break;
     case 'operator div':
       x = app.result.textContent;
+      app.inline.textContent += app.result.textContent + " ÷ ";
       op = '/';
-      app.result.textContent = '0';
+      app.result.textContent = '';
       break;
     case 'operator eql':
-      y = app.result.textContent;
-      app.result.textContent = calculate(op, Number(x), Number(y));
+      if (!state) {
+        y = app.result.textContent;
+        app.inline.textContent += app.result.textContent + " = ";
+        app.result.textContent = calculate(op, Number(x), Number(y));
+        app.inline.textContent += app.result.textContent;
+        state = false;
+      }
+      else {
+        app.result.textContent = '0';
+        state = true;
+      }
       break;
     case 'function res':
       app.inline.textContent = '';
       app.result.textContent = '0';
       break;
     case 'function del':
-      app.result.textContent = app.result.textContent.slice(0, -1);
+      app.result.textContent = app.result.textContent === '' ? '0' : app.result.textContent.slice(0, -1);
       break;
     default:
       console.log("switch()");

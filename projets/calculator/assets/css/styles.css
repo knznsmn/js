@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap');
 :root {
   /* Colors */
   --hue-dark: hsl(45, 10%, 20%);
@@ -43,7 +44,7 @@ ul li {
   
 }
 .display {
-  /* position: relative; */
+  font-family: 'Martian Mono', mono;
   margin: 2rem auto;
   padding: .5rem;
   display: flex;
