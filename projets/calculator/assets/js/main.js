@@ -64,57 +64,11 @@ function Keypad(k) {
     case 'number no9':
     case '9':
       app.result.textContent += '9';
+      break;
     case 'function del':
     case 'Delete':
     case 'Backspace':
       app.result.textContent = app.result.textContent === '' ? '0' : app.result.textContent.slice(0, -1);
-      break;
-    default:
-      console.log(k);
-  }
-}
-function Calculate()
-// UI
-function zeroOut() {
-  if (app.result.textContent === '0') {
-      app.result.textContent = '';
-  }
-}
-
-// MAIN()
-app.inline.textContent = '';
-app.result.textContent = '0';
-
-let x, y;
-let op;
-let state;
-x = y = 0;
-
-// Event Listeners
-document.addEventListener('keydown', (e) => {
-  zeroOut();
-  Keypad(e.key);
-});
-
-app.keypad.addEventListener('click', (e) => {
-  state = false;
-  zeroOut();
-  
-  switch (e.target.className) {
-    case 'number no0':
-    case 'number no1':
-    case 'number no2':
-    case 'number no3':
-    case 'number no4':
-      app.result.textContent += '4';
-      break;
-    case 'number no5':
-    case 'number no6':
-    case 'number no7':
-    case 'number no8':
-    case 'number no9':
-    case 'function del':
-      Keypad(e.target.className);
       break;
     case 'operator add':
       x = app.result.textContent;
@@ -158,6 +112,57 @@ app.keypad.addEventListener('click', (e) => {
       app.result.textContent = '0';
       break;
     default:
-      console.log("switch()");
+      console.log(k);
+  }
+}
+function Calculate() {
+
+} 
+// UI
+function zeroOut() {
+  if (app.result.textContent === '0') {
+      app.result.textContent = '';
+  }
+}
+
+// MAIN()
+app.inline.textContent = '';
+app.result.textContent = '0';
+
+let x, y;
+let op;
+let state;
+x = y = 0;
+
+// Event Listeners
+document.addEventListener('keydown', (e) => {
+  zeroOut();
+  Keypad(e.key);
+});
+
+app.keypad.addEventListener('click', (e) => {
+  state = false;
+  zeroOut();
+  
+  switch (e.target.className) {
+    case 'number no0':
+    case 'number no1':
+    case 'number no2':
+    case 'number no3':
+    case 'number no4':
+    case 'number no5':
+    case 'number no6':
+    case 'number no7':
+    case 'number no8':
+    case 'number no9':
+    case 'function del':
+    case 'operator add':
+    case 'operator sub':
+    case 'operator mul':
+    case 'operator div':
+    case 'operator eql':
+    case 'function res':
+    default:
+      console.log("Event listener for click.");
   }
 });

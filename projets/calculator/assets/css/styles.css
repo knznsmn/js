@@ -77,7 +77,7 @@ button {
   height: 100%;
   min-width: 5rem;
   min-height: 5rem;
-  font-size: 2.5rem;
+  font-size: 2rem;
   border-radius: .5rem;
   background: var(--calc-light);
 }
