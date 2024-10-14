@@ -63,12 +63,10 @@ ul li {
 }
 .inline {
   height: 2rem;
-  /* position: absolute; */
   font-size: 1rem;
 }
 .result {
   height: 3.5rem;
-  /* position: absolute; */
   font-size: 3rem;
 }
 .keypad {

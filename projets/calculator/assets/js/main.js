@@ -24,6 +24,12 @@ function calculate(op, numx, numy) {
   console.log("calculate()");
 }
 function Keypad(k) {
+ 
+  if (state) {
+    y = app.result.textContent;
+    state = false;
+  }
+ 
   switch (k) {
     case 'number no0':
     case '0':
@@ -95,17 +101,11 @@ function Keypad(k) {
       app.result.textContent = '';
       break;
     case 'operator eql':
-      if (!state) {
         y = app.result.textContent;
         app.inline.textContent += app.result.textContent + " = ";
         app.result.textContent = calculate(op, Number(x), Number(y));
-        app.inline.textContent += app.result.textContent;
-        state = false;
-      }
-      else {
-        app.result.textContent = '0';
+        // app.inline.textContent += app.result.textContent;
         state = true;
-      }
       break;
     case 'function res':
       app.inline.textContent = '';
@@ -115,9 +115,7 @@ function Keypad(k) {
       console.log(k);
   }
 }
-function Calculate() {
 
-} 
 // UI
 function zeroOut() {
   if (app.result.textContent === '0') {
@@ -133,6 +131,7 @@ let x, y;
 let op;
 let state;
 x = y = 0;
+state = false;
 
 // Event Listeners
 document.addEventListener('keydown', (e) => {
@@ -141,29 +140,6 @@ document.addEventListener('keydown', (e) => {
 });
 
 app.keypad.addEventListener('click', (e) => {
-  state = false;
   zeroOut();
-  
-  switch (e.target.className) {
-    case 'number no0':
-    case 'number no1':
-    case 'number no2':
-    case 'number no3':
-    case 'number no4':
-    case 'number no5':
-    case 'number no6':
-    case 'number no7':
-    case 'number no8':
-    case 'number no9':
-    case 'function del':
-    case 'operator add':
-    case 'operator sub':
-    case 'operator mul':
-    case 'operator div':
-    case 'operator eql':
-    case 'function res':
-      Keypad(e.target.className);
-    default:
-      console.log("Event listener for click.");
-  }
+  Keypad(e.target.className);
 });
