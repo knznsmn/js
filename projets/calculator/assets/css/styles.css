@@ -7,10 +7,12 @@
   --hue-light: hsl(45, 0%, 80%);
   --hue-lighter: hsl(45, 0%, 90%);
   --hue-lightest: hsl(45, 0%, 95%);
+  --hue-accent1: hsl(25, 80%, 50%);
+  --hue-accent2: hsl(170, 50%, 50%);
   --bg-light: hsl(0, 50%, 100%);
   --bg-dark: hsl(0, 0%, 0%);
-  --calc-dark: linear-gradient(45deg, hsl(90, 10%, 10%), hsl(90, 15%, 15%));
-  --calc-light: linear-gradient(45deg, hsl(90, 10%, 90%), hsl(90, 15%, 95%));
+  --calc-dark: linear-gradient(45deg, var(--hue-darkest), var(--hue-dark));
+  --calc-light: linear-gradient(45deg, var(--hue-light), var(--hue-lightest));
 }
 * {
   margin: 0;
@@ -36,13 +38,18 @@ ul li {
   margin: auto 1rem;
 }
 .calculatrice {
-  /* max-width: 20rem; */
-  width: 100%;
+  width: 100vw;
+  height: 100%;
   padding: 1rem;
   background: var(--calc-dark);
   border-radius: 2rem;
-  
 }
+@media (width >= 560px) {
+  .calculatrice {
+    width: 24rem;
+  }
+}
+
 .display {
   font-family: 'Martian Mono', mono;
   margin: 2rem auto;
@@ -69,21 +76,20 @@ ul li {
   display: grid;
   grid-template-rows: repeat(5, 1fr);
   grid-template-columns: repeat(4, 1fr);
-  justify-content: center;
-  gap: .25rem;
+  gap: .5rem;
 }
 button {
   width: 100%;
   height: 100%;
-  min-width: 5rem;
-  min-height: 5rem;
+  min-width: 4rem;
+  min-height: 4rem;
   font-size: 2rem;
   border-radius: .5rem;
   background: var(--calc-light);
 }
 .operator {
-  color: hsl(0, 80%, 50%);
+  color: var(--hue-accent1);
 }
 .function {
-  color: hsl(130, 50%, 50%);
+  color: var(--hue-accent2);
 }

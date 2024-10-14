@@ -162,6 +162,7 @@ app.keypad.addEventListener('click', (e) => {
     case 'operator div':
     case 'operator eql':
     case 'function res':
+      Keypad(e.target.className);
     default:
       console.log("Event listener for click.");
   }
