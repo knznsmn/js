@@ -23,6 +23,63 @@ function calculate(op, numx, numy) {
   };
   console.log("calculate()");
 }
+function Keypad(k) {
+  switch (k) {
+    case 'number no0':
+    case '0':
+      app.result.textContent += '0';
+      break;
+    case 'number no1':
+    case '1':
+      app.result.textContent += '1';
+      break;
+    case 'number no2':
+    case '2':
+      app.result.textContent += '2';
+      break;
+    case 'number no3':
+    case '3':
+      app.result.textContent += '3';
+      break;
+    case 'number no4':
+    case '4':
+      app.result.textContent += '4';
+      break;
+    case 'number no5':
+    case '5':
+      app.result.textContent += '5';
+      break;
+    case 'number no6':
+    case '6':
+      app.result.textContent += '6';
+      break;
+    case 'number no7':
+    case '7':
+      app.result.textContent += '7';
+      break;
+    case 'number no8':
+    case '8':
+      app.result.textContent += '8';
+      break;
+    case 'number no9':
+    case '9':
+      app.result.textContent += '9';
+    case 'function del':
+    case 'Delete':
+    case 'Backspace':
+      app.result.textContent = app.result.textContent === '' ? '0' : app.result.textContent.slice(0, -1);
+      break;
+    default:
+      console.log(k);
+  }
+}
+function Calculate()
+// UI
+function zeroOut() {
+  if (app.result.textContent === '0') {
+      app.result.textContent = '';
+  }
+}
 
 // MAIN()
 app.inline.textContent = '';
@@ -32,44 +89,32 @@ let x, y;
 let op;
 let state;
 x = y = 0;
+
 // Event Listeners
+document.addEventListener('keydown', (e) => {
+  zeroOut();
+  Keypad(e.key);
+});
+
 app.keypad.addEventListener('click', (e) => {
   state = false;
-  
-  if (app.result.textContent === '0') {
-      app.result.textContent = '';
-  }
+  zeroOut();
   
   switch (e.target.className) {
     case 'number no0':
-      app.result.textContent += '0';
-      break;
     case 'number no1':
-      app.result.textContent += '1';
-      break;
     case 'number no2':
-      app.result.textContent += '2';
-      break;
     case 'number no3':
-      app.result.textContent += '3';
-      break;
     case 'number no4':
       app.result.textContent += '4';
       break;
     case 'number no5':
-      app.result.textContent += '5';
-      break;
     case 'number no6':
-      app.result.textContent += '6';
-      break;
     case 'number no7':
-      app.result.textContent += '7';
-      break;
     case 'number no8':
-      app.result.textContent += '8';
-      break;
     case 'number no9':
-      app.result.textContent += '9';
+    case 'function del':
+      Keypad(e.target.className);
       break;
     case 'operator add':
       x = app.result.textContent;
@@ -111,9 +156,6 @@ app.keypad.addEventListener('click', (e) => {
     case 'function res':
       app.inline.textContent = '';
       app.result.textContent = '0';
-      break;
-    case 'function del':
-      app.result.textContent = app.result.textContent === '' ? '0' : app.result.textContent.slice(0, -1);
       break;
     default:
       console.log("switch()");
