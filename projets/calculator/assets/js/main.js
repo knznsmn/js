@@ -101,6 +101,7 @@ function Keypad(k) {
       app.result.textContent = '';
       break;
     case 'operator eql':
+    case 'Enter':
         y = app.result.textContent;
         app.inline.textContent += app.result.textContent + " = ";
         app.result.textContent = calculate(op, Number(x), Number(y));
@@ -108,6 +109,7 @@ function Keypad(k) {
         state = true;
       break;
     case 'function res':
+    case 'Escape':
       app.inline.textContent = '';
       app.result.textContent = '0';
       break;
