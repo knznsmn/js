@@ -122,6 +122,14 @@ function zeroOut() {
       app.result.textContent = '';
   }
 }
+function Display(s) {
+  let len = s.length;
+  let max = 16;
+  if (len > max) {
+    s = s.splice(0, 16);
+    app.result.textContent = s;
+  }
+}
 
 // MAIN()
 app.inline.textContent = '';

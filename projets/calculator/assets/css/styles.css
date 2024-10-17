@@ -19,6 +19,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* Centered Elements */
 
 body {
   width: 100vw;
@@ -38,19 +39,17 @@ ul li {
   margin: auto 1rem;
 }
 .calculatrice {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   padding: 1rem;
   background: var(--calc-dark);
-  border-radius: 2rem;
+  border-radius: .5rem;
 }
-@media (width >= 560px) {
-  .calculatrice {
-    width: 24rem;
-  }
-}
-
 .display {
+  width: 100%;
   font-family: 'Martian Mono', mono;
   margin: 2rem auto;
   padding: .5rem;
@@ -69,6 +68,19 @@ ul li {
   height: 3.5rem;
   font-size: 3rem;
 }
+/* Panel */
+.panel ul {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--hue-accent1);
+}
+.panel li:nth-child(2) {
+  text-transform: uppercase;
+}
+
 .keypad {
   margin: .5rem;
   display: grid;
@@ -77,12 +89,12 @@ ul li {
   gap: .5rem;
 }
 button {
+  margin: 1.5rem auto;
   width: 100%;
   height: 100%;
-  min-width: 4rem;
-  min-height: 4rem;
   font-size: 2rem;
   border-radius: .5rem;
+  border: none;
   background: var(--calc-light);
 }
 .operator {
@@ -90,4 +102,23 @@ button {
 }
 .function {
   color: var(--hue-accent2);
+}
+
+.footer ul {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  color: var(--hue-accent2);
+}
+@media (width <560px) {
+  header, footer {
+    display: none;
+  }
+}
+@media (width >= 560px) {
+  .calculatrice {
+    width: 24rem;
+    height: 100%;
+  }
 }
