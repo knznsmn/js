@@ -12,17 +12,31 @@ const display = document.querySelector(".display");
 
 
 // Function Hall
+
 function typewriter(str) {
-  console.log(str.length);
-  display.innerHTML = "";
-  
+  display.textContent = "";
+    
   for (let i = 0; i < str.length; i++) {
     console.log(str[i]);
     setTimeout(function () {
-      display.innerHTML += str[i];
-    }, i * 1000);
+      display.textContent += str[i];
+    }, i * 250);
+  };
+}
+
+function backspace(str) {
+  
+  display.textContent = str;
+  for (let i = str.length; i > 0; i--) {
+    setTimeout(function() {
+      str = str.slice(0, -1);
+      display.textContent;
+    }, 250);
   }
 }
-// main()
 
-typewriter("Hello");
+// main()
+let txt = "Hello, bitches!";
+
+// typewriter("Hello, bitches!");
+backspace(txt);

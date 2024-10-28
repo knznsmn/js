@@ -26,7 +26,7 @@ main {
 div.cursor {
   width: .25rem;
   height: 1rem;
-  background: linear-gradient(0deg, lightblue, lightgreen);
+  background: linear-gradient(0deg, darkblue, darkgreen);
   animation: expand 1s infinite ease-in-out;
 }
 
