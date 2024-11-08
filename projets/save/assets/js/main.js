@@ -14,8 +14,8 @@ const footer = document.getElementsByTagName('footer')[0];
 function Footer() {
   const ans = new Date().getFullYear();
   const ped = document.createElement('p');
-  ped.innerHTML = `<small>${ans} knznsmn. All rights reversed.</small>`;
   footer.appendChild(ped);
+  ped.innerHTML = `<small>${ans} knznsmn. All rights reversed.</small>`;
 }
 
 // Main()
