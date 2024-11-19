@@ -1,10 +1,14 @@
 
-// import {Main} from './ui/article so.js';
+import { Main } from './ui/main.js';
+import { Head } from './ui/head.js';
+import { Foot } from './ui/foot.js';
 
-/* document.addEventListener('DOMContentLoaded', () => {
-	document.body.appendChild(main());
-	document.body.appendChild(Footer());
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('app.js running...');
+  document.body.appendChild(Head());
+	document.body.appendChild(Main());
+	document.body.appendChild(Foot());
 })
-*/
-// document.body.appendChild(Nav());
+
+
 
