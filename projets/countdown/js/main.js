@@ -12,14 +12,16 @@
 
 // Function Hall
 import { get_current_year } from "./modules/utils.js";
-import {Clock} from "./modules/Clock.js";
+import { Countdown }        from "./modules/Countdown.js";
+import { Clock }            from "./modules/Clock.js";
 
 // Anchors
 const ans = document.getElementById('ans');
 ans.innerText = get_current_year();
 
 function main() {
-  setInterval(Clock, 1000)
+  setInterval(Countdown, 1000);
+  setInterval(Clock, 1000);
 }
 
 main()
