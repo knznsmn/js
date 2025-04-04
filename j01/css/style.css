@@ -104,8 +104,9 @@ header {
 main {
 	flex: 1;
 	display: flex;
-	justify-content: center;
 	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 }
 footer {
 	text-align: center;
@@ -123,4 +124,7 @@ footer span::before {
 	margin: 1rem;
 	padding: 1rem;
 	text-transform: uppercase;
+}
+.playing {
+	scale: 1.1rem;
 }

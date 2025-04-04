@@ -13,8 +13,10 @@
 // Function Hall
 import { get_current_year } from "./modules/utils.js";
 import { Keys } from "./modules/Keys.js";
+import { Banner } from "./modules/Banner.js";
 
 // UI
+Banner();
 Keys();
 
 // Anchors
@@ -36,6 +38,7 @@ function audioPlayer(s) {
   };
   waves[s].currentTime = 0;
   waves[s].play();
+  Keys[s].classList.add('playing');
 }
 
 
