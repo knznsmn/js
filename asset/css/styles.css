@@ -49,8 +49,18 @@ header {
 }
 main {
   flex: 1;
+  height: 100%;
+}
+
+ul {
+  position: relative;
 }
 
 ul li {
   list-style: none;
+  position: absolute;
+}
+
+footer {
+  font-size: .85rem;
 }
